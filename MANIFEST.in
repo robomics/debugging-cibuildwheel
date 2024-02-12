@@ -1,0 +1,7 @@
+# Copyright (C) 2023 Roberto Rossini (roberros@uio.no)
+#
+# SPDX-License-Identifier: MIT
+
+include CMakeLists.txt README.md LICENSE
+recursive-include src *.cpp *.hpp CMakeLists.txt
+prune test
