@@ -7,7 +7,7 @@ find_package(
   COMPONENTS Interpreter Development.Module
   REQUIRED)
 
-find_package(pybind11 REQUIRED HINTS "${Python3_SITELIB}/pybind11/")
+find_package(pybind11 CONFIG REQUIRED)
 
 pybind11_add_module(
   mymodule
