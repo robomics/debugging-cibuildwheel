@@ -7,7 +7,7 @@ find_package(
   COMPONENTS Interpreter Development.Module
   REQUIRED)
 
-find_package(pybind11 CONFIG REQUIRED)
+find_package(pybind11 REQUIRED)
 
 pybind11_add_module(
   mymodule
