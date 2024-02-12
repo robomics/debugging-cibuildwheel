@@ -8,4 +8,4 @@ import mymodule
 
 class TestClass:
     def test_mymodule(self):
-        assert mymodule.call_me == "Wassup!"
+        assert mymodule.call_me() == "Wassup!"
