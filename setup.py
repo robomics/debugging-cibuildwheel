@@ -38,21 +38,6 @@ class CMakeBuild(build_ext):
         ext_fullpath = Path.cwd() / self.get_ext_fullpath(ext.name)
         extdir = ext_fullpath.parent.resolve() / ext.name
         extdir.mkdir(exist_ok=True, parents=True)
-        with open(extdir / "__init__.py", "w") as f:
-            f.write(
-                textwrap.dedent(
-                    f"""
-                    from ._mymodule import call_me
-
-                    try:
-                        from importlib.metadata import version
-                    except ModuleNotFoundError:
-                        from importlib_metadata import version
-
-                    __version__ = version("mymodule")
-                    """
-                )
-            )
 
         # Using this requires trailing slash for auto-detection & inclusion of
         # auxiliary "native" libs
@@ -161,6 +146,6 @@ class CMakeBuild(build_ext):
 # The information here can also be placed in setup.cfg - better separation of
 # logic and declaration, and simpler if you include description/version in a file.
 setup(
-    ext_modules=[CMakeExtension("_mymodule")],
+    ext_modules=[CMakeExtension("mymodule")],
     cmdclass={"build_ext": CMakeBuild},
 )
