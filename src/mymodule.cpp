@@ -6,4 +6,4 @@
 
 std::string call_me() { return "Wassup!"; }
 
-PYBIND11_MODULE(hictkpy, m) { m.def("call_me", &call_me); }
+PYBIND11_MODULE(mymodule, m) { m.def("call_me", &call_me); }
