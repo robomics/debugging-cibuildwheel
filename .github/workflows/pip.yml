@@ -89,7 +89,9 @@ jobs:
         path: ${{ env.CONAN_HOME }}
 
     - name: Test
-      run: python -m pytest test -v
+      run: |
+        cd test
+        python -m pytest . -v
 
 
   pip-status-check:
