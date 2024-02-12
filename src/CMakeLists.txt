@@ -10,6 +10,6 @@ find_package(
 find_package(pybind11 CONFIG REQUIRED)
 
 pybind11_add_module(
-  mymodule
+  _mymodule
   MODULE
   mymodule.cpp)

@@ -1,4 +1,4 @@
-from .mymodule import call_me
+from ._mymodule import *
 
 try:
     from importlib.metadata import version
