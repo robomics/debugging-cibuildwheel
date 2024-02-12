@@ -82,7 +82,7 @@ jobs:
           CIBW_ARCHS_LINUX: "x86_64"
           CIBW_ARCHS_WINDOWS: "AMD64"
           CIBW_BUILD: "cp311-*"
-          CIBW_TEST_SKIP: "*"
+          # CIBW_TEST_SKIP: "*"
 
       - name: Verify clean directory
         run: git diff --exit-code
