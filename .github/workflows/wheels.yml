@@ -76,16 +76,10 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Set up QEMU
-        if: matrix.os == 'ubuntu-22.04'
-        uses: docker/setup-qemu-action@v3
-        with:
-          platforms: all
-
       - name: Build wheels
         uses: pypa/cibuildwheel@v2.16
         env:
-          CIBW_ARCHS_LINUX: "x86_64 aarch64"
+          CIBW_ARCHS_LINUX: "x86_64"
           CIBW_ARCHS_WINDOWS: "AMD64"
 
       - name: Verify clean directory
