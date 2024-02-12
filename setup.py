@@ -146,6 +146,6 @@ class CMakeBuild(build_ext):
 # logic and declaration, and simpler if you include description/version in a file.
 setup(
     packages=find_packages(),
-    ext_modules=[CMakeExtension("_mymodule")],
+    ext_modules=[CMakeExtension("mymodule")],
     cmdclass={"build_ext": CMakeBuild},
 )

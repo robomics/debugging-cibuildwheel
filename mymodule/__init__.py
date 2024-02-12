@@ -1,4 +1,4 @@
-from ._mymodule import *
+from .mymodule import *
 
 try:
     from importlib.metadata import version
