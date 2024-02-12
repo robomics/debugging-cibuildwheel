@@ -38,21 +38,21 @@ class CMakeBuild(build_ext):
         ext_fullpath = Path.cwd() / self.get_ext_fullpath(ext.name)
         extdir = ext_fullpath.parent.resolve() / ext.name
         extdir.mkdir(exist_ok=True, parents=True)
-        with open(extdir / "__init__.py", "w") as f:
-            f.write(
-                textwrap.dedent(
-                    f"""
-                    from .mymodule import call_me
+        # with open(extdir / "__init__.py", "w") as f:
+        #     f.write(
+        #         textwrap.dedent(
+        #             f"""
+        #             from .mymodule import call_me
 
-                    try:
-                        from importlib.metadata import version
-                    except ModuleNotFoundError:
-                        from importlib_metadata import version
+        #             try:
+        #                 from importlib.metadata import version
+        #             except ModuleNotFoundError:
+        #                 from importlib_metadata import version
 
-                    __version__ = version("mymodule")
-                    """
-                )
-            )
+        #             __version__ = version("mymodule")
+        #             """
+        #         )
+        #     )
 
         # Using this requires trailing slash for auto-detection & inclusion of
         # auxiliary "native" libs
