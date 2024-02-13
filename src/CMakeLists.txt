@@ -7,9 +7,12 @@ find_package(
   COMPONENTS Interpreter Development.Module
   REQUIRED)
 
+set(PYBIND11_NEWPYTHON ON)
 find_package(pybind11 CONFIG REQUIRED)
 
 pybind11_add_module(
-  mymodule
+  _mymodule
   MODULE
   mymodule.cpp)
+
+install(TARGETS _mymodule LIBRARY DESTINATION mymodule)
